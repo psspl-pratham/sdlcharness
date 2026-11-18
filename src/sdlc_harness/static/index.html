@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SDLC Harness · POC</title>
+<link rel="stylesheet" href="/static/console.css">
+<script src="/static/console.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="/">◈ SDLC Harness <span class="tag">POC</span></a><small id="runtime">Connecting to Bedrock…</small></header>
+<div class="shell">
+<aside>
+<p class="eyebrow">New project</p>
+<form id="create-form">
+<label for="idea">What should we build?</label>
+<textarea id="idea" required maxlength="8000" placeholder="A single-page todo app: add tasks, mark them complete, delete them, and keep them after refresh."></textarea>
+<label for="blueprint">Workflow</label>
+<select id="blueprint"><option value="default">Full workflow · 2 review gates</option><option value="planning-only">Planning only · review the scope first</option></select>
+<button class="primary wide" type="submit">Start project →</button>
+</form>
+<p class="muted small">Bedrock generates the work. Docker runs the tests. Each run uses AWS inference.</p>
+<div class="projects"><p class="eyebrow">Projects</p><div id="projects"></div></div>
+<p id="connection" class="muted small" role="status">Connecting…</p>
+</aside>
+<main>
+<div id="notice" role="alert" class="notice error" hidden></div>
+<div id="content"><section class="intro"><p class="eyebrow">Follow the work, step by step</p><h1>From your idea to a tested app.</h1><p>See what the model understood, who is working, how tasks fit into sprints, and which checks passed.</p><div class="panel"><h2>Start with a reviewable plan</h2><p class="muted">The full workflow pauses after planning and after QA. Check that the stories describe the app you actually want before approving the build.</p><p class="muted">This POC builds one Python/FastAPI service. It can serve a single HTML page with CSS and JavaScript.</p></div></section></div>
+</main>
+</div>
+</body>
+</html>

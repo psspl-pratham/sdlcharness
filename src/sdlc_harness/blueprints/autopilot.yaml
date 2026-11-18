@@ -1,0 +1,21 @@
+name: autopilot
+team:
+  sprint_length_days: 14
+  focus_factor: 0.8
+  allow_cross_role: true
+  members:
+    - {name: Asha, role: backend, points_per_sprint: 8}
+    - {name: Meera, role: qa, points_per_sprint: 5}
+stages:
+  - name: intake
+  - name: requirements
+  - name: architecture
+  - name: breakdown
+  - name: sprint_plan
+  - name: build
+  - name: qa
+    config: {max_fix_attempts: 2}
+  - name: deploy
+    config: {target: local}
+  - name: retro
+

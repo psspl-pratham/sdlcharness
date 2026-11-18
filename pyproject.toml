@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdlc-harness"
+version = "0.1.0"
+description = "A local, human-gated SDLC harness proof of concept"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1", "pydantic>=2.10,<3", "PyYAML>=6,<7",
+  "uvicorn>=0.30,<1", "pytest>=8,<10", "httpx>=0.27,<1",
+  "python-dotenv>=1.0,<2", "boto3>=1.39,<2",
+]
+
+[project.optional-dependencies]
+bedrock = []
+
+[project.scripts]
+harness = "sdlc_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sdlc_harness = ["blueprints/*.yaml", "static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,14 @@
+name: planning-only
+team:
+  sprint_length_days: 14
+  focus_factor: 0.8
+  members:
+    - {name: Asha, role: backend, points_per_sprint: 8}
+    - {name: Meera, role: qa, points_per_sprint: 5}
+stages:
+  - name: intake
+  - name: requirements
+  - name: architecture
+  - name: breakdown
+  - name: sprint_plan
+    gate: manual
